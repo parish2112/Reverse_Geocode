@@ -14,7 +14,7 @@ export class MapComponent implements OnInit {
 
   @Output() mapClick = new EventEmitter<{ lat: number; lng: number }>();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   async ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -32,7 +32,7 @@ export class MapComponent implements OnInit {
   }
 
   onMapClick(e: L.LeafletMouseEvent) {
-    if (isPlatformBrowser(this.platformId)){
+    if (isPlatformBrowser(this.platformId)) {
       const lat = e.latlng.lat;
       const lng = e.latlng.lng;
       this.updateMarker(lat, lng);
@@ -41,7 +41,7 @@ export class MapComponent implements OnInit {
   }
 
   async updateMarker(lat: number, lng: number) {
-    if (isPlatformBrowser(this.platformId)){
+    if (isPlatformBrowser(this.platformId)) {
       const L = await import('leaflet');
       if (this.marker) {
         this.map.removeLayer(this.marker);

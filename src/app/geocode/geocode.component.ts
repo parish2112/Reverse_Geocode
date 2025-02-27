@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ReverseGeocodeService } from '../reverse-geocode.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MapComponent } from '../map/map.component'; // Import MapComponent
+import { MapComponent } from '../map/map.component'; 
 
 @Component({
   selector: 'app-geocode',
   standalone: true,
-  imports: [FormsModule, CommonModule, MapComponent], // Add MapComponent to imports
+  imports: [FormsModule, CommonModule, MapComponent], 
   templateUrl: './geocode.component.html',
   styleUrl: './geocode.component.scss'
 })
@@ -20,7 +20,6 @@ export class GeocodeComponent implements OnInit {
   constructor(private geocodeService: ReverseGeocodeService) { }
 
   ngOnInit() {
-    // Initialization logic can go here if needed.
   }
 
   onMapClick(coords: { lat: number; lng: number }) {

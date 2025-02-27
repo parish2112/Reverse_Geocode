@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [GeocodeComponent, FormsModule], // Remove RouterOutlet
+  imports: [GeocodeComponent, FormsModule], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
