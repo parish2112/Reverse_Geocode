@@ -1,0 +1,105 @@
+$primary-color: #f66435; // Changed to your primary color
+$border-color: #dbe0e6;
+$text-color: #111418;
+$background-color: #f4efca; // Added background color variable
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $background-color; // Using the variable
+  font-family: "Work Sans", "Noto Sans", sans-serif;
+  padding: 20px;
+  border-style: solid;
+  border-color: $primary-color; // Using the variable
+  border-width: 10px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 512px;
+    max-width: 960px;
+    margin: 20px auto;
+
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding: 0 10px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+
+    .input-group {
+      margin: 10px 10px;
+
+      input[type="number"] {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        font-size: 16px;
+        color: $text-color;
+
+        &:focus {
+          outline: none;
+          border-color: $border-color;
+        }
+      }
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: flex-end;
+      margin: 10px 10px;
+
+      button {
+        background-color: $primary-color; // Using the variable
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .address-display {
+      margin: 20px 10px;
+
+      .loader {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 18px;
+        color: $primary-color; // Using the variable
+      }
+
+      .address-card {
+        background-color: #f9f9f9;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .address-title {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: $primary-color; // Using the variable
+        }
+
+        .address-text {
+          font-size: 16px;
+          color: $text-color;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

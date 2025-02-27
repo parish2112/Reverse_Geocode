@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="content">
+      <h1>Reverse Geocoding</h1>
+      <p>Enter latitude and longitude coordinates or click on the map to find the corresponding address.</p>
+  
+      <app-map (mapClick)="onMapClick($event)"></app-map>
+  
+      <div class="input-group">
+        <label>
+          <input type="number" placeholder="Latitude" [(ngModel)]="latitude" />
+        </label>
+      </div>
+      <div class="input-group">
+        <label>
+          <input type="number" placeholder="Longitude" [(ngModel)]="longitude" />
+        </label>
+      </div>
+      <div class="button-group">
+        <button (click)="getAddress()">Submit: </button>
+      </div>
+      <div class="address-display">
+        <div *ngIf="loading">
+          <div class="loader">Loading...</div>
+        </div>
+        <div *ngIf="address && !loading">
+          <div class="address-card">
+            <h2 class="address-title">Address</h2>
+            <p class="address-text">{{ address }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
